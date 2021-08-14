@@ -1,19 +1,30 @@
 //<FORM ()>====================================================================================================
-.form {
-	&__row {
-	}
-	&__column {
-	}
-	&__line {
-	}
-	&__input {
+.search-form {
+	&__item {
+		display: flex;
+		align-items: center;
 	}
 	&__button {
+		&::before {
+			color: $grayColor;
+			font-size: 25px;
+		}
 	}
-	&__error {
+	&__input {
+		padding: 10px 20px;
+		max-width: 135px;
+		width: 100%;
+		color: $grayColor;
+		font-size: 24px;
+		line-height: 25 / 24 * 100%;
+		transition: all 0.3s ease 0s;
+		&._focus {
+			max-width: 273px;
+			background-color: rgb(245, 245, 245);
+			margin: 0px 0px 0px 20px;
+		}
 	}
 }
-
 //</FORM>====================================================================================================
 
 //<BUTTONS (a.btn+tab)>====================================================================================================

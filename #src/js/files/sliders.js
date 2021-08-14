@@ -93,3 +93,24 @@ if (document.querySelector('.slider-welcome__body')) {
 		}
 	});
 }
+
+if (document.querySelector('.slider-destination__body')) {
+	let destinationSlider = new Swiper('.slider-destination__body', {
+		observer: true,
+		observeParents: true,
+		autoHeight: false,
+		parallax: true,
+		loop: true,
+		spaceBetween: 120,
+		navigation: {
+			nextEl: '.slider-destination .slider-arrow_next',
+			prevEl: '.slider-destination .slider-arrow_prev',
+		},
+		autoplay: {
+			delay: 2500,
+			stopOnLastSlide: false,
+			disableOnInteraction: false
+		},
+		speed: 1500,
+	});
+}
