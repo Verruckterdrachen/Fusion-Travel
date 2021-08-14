@@ -42,6 +42,7 @@ $primaryColor: #fbad27;
 @import "null";
 body {
 	color: $mainColor;
+	letter-spacing: 80 / 1000 + em;
 	&._lock {
 		overflow: hidden;
 	}
