@@ -41,4 +41,129 @@
 		margin: 0px 0px 20px 0px;
 	}
 }
+//============================================================================
+.welcome {
+	&__body {
+		@include adaptiv-value("padding-bottom", 70, 30, 1);
+		border-bottom: 1px solid #ededed;
+	}
+	&__head {
+		text-align: center;
+		@include adaptiv-value("margin-bottom", 70, 20, 1);
+	}
+	&__title {
+		margin: 0px 0px 15px / 50px * 1em 0px;
+	}
+	&__text {
+		max-width: 1048px;
+		margin: 0px auto;
+	}
+}
+.slider-welcome {
+	position: relative;
+	&__body {
+		padding: 60px 0px;
+		@media (min-width: $md3+px) {
+			.swiper-slide-next {
+				box-shadow: 0px 12px 59px 0px rgba(0, 0, 0, 0.08);
+			}
+		}
+		@media (max-width: $md3+px) {
+			margin-left: -15px;
+			margin-right: -15px;
+			.swiper-slide-active {
+				box-shadow: 0px 12px 59px 0px rgba(0, 0, 0, 0.08);
+			}
+		}
+		@include adaptiv-value("margin-bottom", 60, 10, 1);
+	}
+	&__slide {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		transition: all 0.5s ease 0s;
+		@include adaptiv-value("padding-top", 55, 20, 1);
+		@include adaptiv-value("padding-right", 35, 20, 1);
+		@include adaptiv-value("padding-bottom", 50, 20, 1);
+		@include adaptiv-value("padding-left", 55, 20, 1);
+		border-radius: 8px;
+		*:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__image {
+		margin: 0px 0px 20px 0px;
+	}
+	&__title {
+		font-size: 18px;
+		line-height: 150%;
+		font-weight: 500;
+		color: $mainColor;
+		margin: 0px 0px 20px/18px * 1em 0px;
+	}
+	&__text {
+		margin: 0px 0px 20px/16px * 1em 0px;
+	}
+}
+//============================================================================
+.swiper-pagination-bullets {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	height: 20px;
+}
+.swiper-pagination-bullet {
+	flex: 0 0 8px;
+	height: 8px;
+	background-color: #999;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0px 11px;
+	border-radius: 50%;
+	transition: all 0.3s ease 0s;
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		flex: 0 0 16px;
+		width: 16px;
+		top: 50%;
+		left: 50%;
+		border-radius: 50%;
+		transform: translate(-50%, -50%);
+		height: 16px;
+		border: 1px solid #999;
+		transition: all 0.3s ease 0s;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			&::before {
+				border-color: $primaryColor;
+			}
+			background-color: $primaryColor;
+		}
+	}
+}
+.swiper-pagination-bullet-active {
+	flex: 0 0 15px;
+	height: 15px;
+	background-color: $primaryColor;
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		flex: 0 0 23px;
+		width: 23px;
+		top: 50%;
+		left: 50%;
+		border-radius: 50%;
+		transform: translate(-50%, -50%);
+		height: 23px;
+		border: 1px solid $primaryColor;
+	}
+}
 //====================================================================================================
