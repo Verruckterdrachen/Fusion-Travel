@@ -268,4 +268,99 @@
 		line-height: 25 / 24 * 100%;
 	}
 }
+//============================================================================
+.blog {
+	&__body {
+		display: flex;
+		flex-direction: column;
+		@include adaptiv-value("padding-bottom", 85, 30, 1);
+		border-bottom: 1px solid #ededed;
+	}
+	&__head {
+		text-align: center;
+		@include adaptiv-value("margin-bottom", 120, 40, 1);
+	}
+	&__title {
+		margin: 0px 0px 15px / 50px * 1em 0px;
+	}
+	&__items {
+		@include adaptiv-value("margin-bottom", 120, 40, 1);
+	}
+	&__button {
+		align-self: center;
+	}
+}
+.items-blog {
+	display: grid;
+	@include adaptiv-value("gap", 74, 0, 1);
+	@media (min-width: 1320px) {
+		grid-template-columns: auto 286px;
+	}
+	&__main {
+		display: grid;
+		@include adaptiv-value("gap", 74, 15, 1);
+		grid-template-columns: minmax(auto, 2fr) minmax(286px, 1fr);
+		grid-template-rows: minmax(auto, 454px) minmax(207px, auto);
+		@media (max-width: 1320px) {
+		}
+		@media (max-width: $md3+px) {
+			grid-template-columns: 1fr;
+		}
+	}
+	&__image {
+		background-color: #b2b2b2;
+		box-shadow: 0px 12px 59px 0px rgba(0, 0, 0, 0.08);
+	}
+	&__primary {
+		display: grid;
+		@include adaptiv-value("gap", 74, 15, 1);
+		grid-template-rows: minmax(207px, auto);
+		@media (max-width: 1320px) {
+			grid-template-columns: 1fr 2fr;
+		}
+		@media (max-width: $md3+px) {
+			grid-template-columns: 1fr;
+		}
+	}
+}
+.card-item {
+	display: grid;
+	grid-template-rows: 207px auto;
+	box-shadow: 0px 12px 59px 0px rgba(0, 0, 0, 0.08);
+	&_rev {
+		grid-template-rows: auto;
+		grid-template-columns: 1fr 1fr;
+	}
+	&_last {
+		@media (max-width: 1320px) {
+			grid-template-rows: auto;
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+	@media (max-width: $md4+px) {
+		grid-template-columns: 1fr;
+	}
+	&__image {
+		background-color: #b2b2b2;
+		padding: 0px 0px 207px 0px;
+	}
+	&__content {
+		padding: 25px 35px;
+		&_primary {
+			padding: 15px;
+		}
+	}
+	&__title {
+		display: inline-flex;
+		color: $mainColor;
+		font-size: 20px;
+		line-height: 30 / 20 * 100%;
+		margin: 0px 0px 10px/20px * 1em 0px;
+	}
+	&__text {
+		color: $ltGrayColor;
+		line-height: 25 / 16 * 100%;
+	}
+}
+
 //====================================================================================================
