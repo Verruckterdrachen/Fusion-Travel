@@ -114,3 +114,25 @@ if (document.querySelector('.slider-destination__body')) {
 		speed: 1500,
 	});
 }
+
+if (document.querySelector('.slider-testimonials__body')) {
+	let testimonialsSlider = new Swiper('.slider-testimonials__body', {
+		observer: true,
+		observeParents: true,
+		autoHeight: false,
+		parallax: true,
+		slidesPerView: 1,
+		spaceBetween: 480,
+		loop: true,
+		pagination: {
+			el: '.slider-testimonials__dotts',
+			clickable: true,
+		},/*
+		autoplay: {
+			delay: 2500,
+			stopOnLastSlide: false,
+			disableOnInteraction: false
+		},*/
+		speed: 1500,
+	});
+}

@@ -16,6 +16,89 @@
 	color: $ltGrayColor;
 	line-height: 25 / 16 * 100%;
 }
+//============================================================================
+.swiper-pagination-bullets {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	height: 20px;
+}
+.swiper-pagination-bullet {
+	flex: 0 0 8px;
+	height: 8px;
+	background-color: #999;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0px 11px;
+	border-radius: 50%;
+	transition: all 0.3s ease 0s;
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		flex: 0 0 16px;
+		width: 16px;
+		top: 50%;
+		left: 50%;
+		border-radius: 50%;
+		transform: translate(-50%, -50%);
+		height: 16px;
+		border: 1px solid #999;
+		transition: all 0.3s ease 0s;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			&::before {
+				border-color: $primaryColor;
+			}
+			background-color: $primaryColor;
+		}
+	}
+}
+.swiper-pagination-bullet-active {
+	flex: 0 0 15px;
+	height: 15px;
+	background-color: $primaryColor;
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		flex: 0 0 23px;
+		width: 23px;
+		top: 50%;
+		left: 50%;
+		border-radius: 50%;
+		transform: translate(-50%, -50%);
+		height: 23px;
+		border: 1px solid $primaryColor;
+	}
+}
+//============================================================================
+.slider-arrows {
+	display: grid;
+	grid-template-columns: repeat(2, 40px);
+	column-gap: 8px;
+}
+.slider-arrow {
+	pointer-events: auto;
+	color: $grayColor;
+	font-size: 30px;
+	cursor: pointer;
+	transition: color 0.3s ease 0s;
+	&_prev {
+		&::before {
+			transform: rotate(180deg);
+		}
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			color: $primaryColor;
+		}
+	}
+}
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 
 //<ГОТОВЫЕ КЛАССЫ>====================================================================================================

@@ -107,66 +107,6 @@
 	}
 }
 //============================================================================
-.swiper-pagination-bullets {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	height: 20px;
-}
-.swiper-pagination-bullet {
-	flex: 0 0 8px;
-	height: 8px;
-	background-color: #999;
-	cursor: pointer;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0px 11px;
-	border-radius: 50%;
-	transition: all 0.3s ease 0s;
-	position: relative;
-	&::before {
-		content: "";
-		position: absolute;
-		flex: 0 0 16px;
-		width: 16px;
-		top: 50%;
-		left: 50%;
-		border-radius: 50%;
-		transform: translate(-50%, -50%);
-		height: 16px;
-		border: 1px solid #999;
-		transition: all 0.3s ease 0s;
-	}
-	@media (any-hover: hover) {
-		&:hover {
-			&::before {
-				border-color: $primaryColor;
-			}
-			background-color: $primaryColor;
-		}
-	}
-}
-.swiper-pagination-bullet-active {
-	flex: 0 0 15px;
-	height: 15px;
-	background-color: $primaryColor;
-	position: relative;
-	&::before {
-		content: "";
-		position: absolute;
-		flex: 0 0 23px;
-		width: 23px;
-		top: 50%;
-		left: 50%;
-		border-radius: 50%;
-		transform: translate(-50%, -50%);
-		height: 23px;
-		border: 1px solid $primaryColor;
-	}
-}
-//============================================================================
 .destination {
 	&__body {
 		@include adaptiv-value("padding-bottom", 85, 30, 1);
@@ -220,28 +160,6 @@
 		}
 		@media (max-width: 1400px) {
 			display: none;
-		}
-	}
-}
-.slider-arrows {
-	display: grid;
-	grid-template-columns: repeat(2, 40px);
-	column-gap: 8px;
-}
-.slider-arrow {
-	pointer-events: auto;
-	color: $grayColor;
-	font-size: 30px;
-	cursor: pointer;
-	transition: color 0.3s ease 0s;
-	&_prev {
-		&::before {
-			transform: rotate(180deg);
-		}
-	}
-	@media (any-hover: hover) {
-		&:hover {
-			color: $primaryColor;
 		}
 	}
 }
@@ -362,5 +280,100 @@
 		line-height: 25 / 16 * 100%;
 	}
 }
+//============================================================================
+.testimonials {
+	&__container {
+		@media (max-width: $md3+px) {
+			padding: 0;
+		}
+	}
+	&__head {
+		text-align: center;
+	}
+	&__title {
+		margin: 0px 0px 15px / 50px * 1em 0px;
+	}
+}
+.slider-testimonials {
+	&__body {
+		@include adaptiv-value("padding-left", 232, 0, 1);
+		@include adaptiv-value("padding-right", 232, 0, 1);
+		@include adaptiv-value("padding-top", 95, 60, 1);
+		@include adaptiv-value("padding-bottom", 140, 80, 1);
+		@media (max-width: $md4+px) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+	&__slide {
+		display: flex;
+		align-items: flex-start;
+		border-radius: 8px;
+		padding: 35px 30px 50px 40px;
+		box-shadow: 0px 12px 59px 0px rgba(0, 0, 0, 0.08);
+		@media (max-width: $md3+px) {
+			flex-direction: column;
+			padding: 0;
+		}
+		@media (min-width: $md3+px) {
+			position: relative;
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				width: 75px;
+				height: 67px;
+			}
+			&::before {
+				top: 0;
+				@include adaptiv-value("left", -160, 0, 1);
+				transform: translate(-50%, 0px);
+				background: url("../img/testimonials/quote-left.png") no-repeat;
+			}
+			&::after {
+				bottom: 0;
+				@include adaptiv-value("right", -160, 0, 1);
+				transform: translate(50%, 0px);
+				background: url("../img/testimonials/quote-right.png") no-repeat;
+			}
+		}
+	}
+	&__image {
+		flex: 0 0 180px;
+		padding: 0px 0px 187px 0px;
+		background-color: #b2b2b2;
+		border-radius: 8px;
+		margin: 0px 35px 0px 0px;
+		@media (max-width: $md3+px) {
+			width: 100%;
+			padding: 0px 0px 100% 0px;
+			border-radius: 0px;
+		}
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		@include adaptiv-value("padding", 40, 20, 1);
+		@media (min-width: $md3+px) {
+			min-height: 100%;
+			padding: 0;
+		}
+	}
+	&__text {
+		@media (min-width: $md3+px) {
+			flex: 1 1 auto;
+		}
+		line-height: 25 / 16 * 100%;
+		margin: 0px 0px 30px 0px;
+	}
+	&__author {
+		color: $primaryColor;
+		margin: 0px 0px 10px / 16px * 1em 0px;
+	}
+	&__place {
+		font-weight: 500;
+	}
+}
+//============================================================================
 
 //====================================================================================================
