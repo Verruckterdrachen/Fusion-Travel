@@ -1,5 +1,65 @@
-footer {
-}
 //====================================================================================================
+.footer {
+	@include adaptiv-value("padding-top", 240, 50, 1);
+	&__container {
+	}
+	&__body {
+	}
+	&__menu {
+	}
+	&__copy {
+		text-align: center;
+		p {
+			line-height: 120%;
+			@include adaptiv-value("padding-top", 55, 30, 1);
+			@include adaptiv-value("padding-bottom", 75, 30, 1);
+		}
+	}
+}
+.menu-footer {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(206px, 1fr));
+	row-gap: 40px;
+	@include adaptiv-value("column-gap", 148, 10, 1);
+	@include adaptiv-value("padding-bottom", 50, 30, 1);
+	border-bottom: 1px solid #ededed;
+	&__column {
+	}
+	&__title {
+		font-size: 20px;
+		line-height: 120%;
+		font-weight: 500;
+		margin: 0px 0px 1em 0px;
+	}
+	&__list {
+		li {
+			color: $grayColor;
+			line-height: 25 / 16 * 100%;
+			&:not(:last-child) {
+				margin: 0px 0px 2px/16px * 1em 0px;
+			}
+		}
+		&_social {
+			display: flex;
+			align-items: center;
+			li {
+				font-size: 32px;
+				&:not(:last-child) {
+					margin: 0px 10px 0px 0px;
+				}
+			}
+		}
+	}
+	&__link {
+		color: $grayColor;
+		line-height: 25 / 16 * 100%;
+		transition: color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $primaryColor;
+			}
+		}
+	}
+}
 
 //====================================================================================================
